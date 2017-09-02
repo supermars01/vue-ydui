@@ -44,6 +44,10 @@
             },
             value: {
                 type: Boolean
+            },
+            backdrop: {
+                type: Boolean,
+                default: true
             }
         },
         watch: {
@@ -96,10 +100,12 @@
                         'popup-' + this.position;
             },
             close() {
-                isIOS && removeClass(this.scrollView, 'g-fix-ios-overflow-scrolling-bug');
+                if (this.backdrop) {
+                    isIOS && removeClass(this.scrollView, 'g-fix-ios-overflow-scrolling-bug');
 
-                this.show = false;
-                this.$emit('input', false);
+                    this.show = false;
+                    this.$emit('input', false);
+                }
             }
         },
         mounted() {
