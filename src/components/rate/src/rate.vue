@@ -54,6 +54,7 @@
             },
             value: {
                 validator(val) {
+                    console.log('val', val, /^(([1-9]\d*)|0)$/.test(Number(val)))
                     return /^(([1-9]\d*)|0)$/.test(Number(val));
                 }
             },
@@ -84,6 +85,7 @@
             this.$nextTick(() => {
                 this.choose(this.value);
             });
+            console.log('rate')
         }
     }
 </script>
