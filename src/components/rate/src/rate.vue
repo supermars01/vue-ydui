@@ -54,8 +54,7 @@
             },
             value: {
                 validator(val) {
-                    console.log('val result',Number(val), /^(([1-9]\d*)|0)$/.test(Number(val)))
-                    return /^(([1-9]\d*)|0)$/.test(Number(val));
+                    return /^(([1-9]\d*)|0)$/.test(Math.ceil(Number(val)));
                 }
             },
             showText: {
