@@ -22,7 +22,10 @@
         },
         watch: {
             value(val) {
-                this.choose(val);
+                if (typeof val === 'string') {
+                    val = +val
+                }
+                this.choose(Math.round(val));
             }
         },
         props: {
