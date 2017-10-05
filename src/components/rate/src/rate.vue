@@ -53,7 +53,9 @@
                 default: '#FF5D50'
             },
             value: {
-                type: [String, Number]
+                validator(val) {
+                    return /^(([1-9]\d*)|0)$/.test(Number(val));
+                }
             },
             showText: {
                 type: Array
@@ -82,7 +84,6 @@
             this.$nextTick(() => {
                 this.choose(this.value);
             });
-            console.log('rate')
         }
     }
 </script>
