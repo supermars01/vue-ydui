@@ -54,7 +54,7 @@
             },
             value: {
                 validator(val) {
-                    return /^(([1-9]\d*)|0)$/.test(val);
+                    return /^(([1-9]\d*)|0)$/.test(Number(val));
                 }
             },
             showText: {
